@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulsing Circle</title>
+  <style>
+    #container {
+      width: 600px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      margin: 0 auto;
+    }
+ 
+    .circle {
+      border-radius: 50%;
+      background-color: rgb(30, 60, 158);
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      opacity: 0;
+      animation: scaleIn 1.5s infinite cubic-bezier(.36, .11, .89, .32);
+    }
+    .nan1{
+        color: rgb(30, 60, 158);
+        animation-name: Txt1;
+        animation-duration: 1.25s;
+        animation-timing-function: steps(2, start);
+        animation-iteration-count: infinite;
+        animation-delay: 0s;
+        font-size: 2rem;
+    }
+    .nan2{
+        color: rgb(30, 60, 158);
+        font-size: 2rem;
+        animation-name: Txt2;
+        animation-duration: 1.25s;
+        animation-timing-function: steps(2, start);
+        animation-iteration-count: infinite;
+        animation-delay: 0s;
+        font-size: 2rem;
+        
+    }
+    .nan{
+        color:rgb(30, 60, 158); 
+        font-size: 1.5rem;
+    }
+    .anitext{
+        display: flex;
+        padding-top: 12rem;
+        align-items: center;  
+    }
+    .item {
+      z-index: 100;
+      padding: 5px;
+    }
+    body{
+        background-color: black;
+    }
+ 
+    .item img {
+      width: 150px;
+    }
+    @keyframes scaleIn {
+  from {
+    transform: scale(.3, .3);
+    opacity: .2;
+  }
+  to {
+    transform: scale(3.5, 3.5);
+    opacity: 0;
+  }
+}
+@keyframes Txt1 {
+  0%,20%,100% {
+    transform: translateX( 0px);
+    /* opacity: 1.2; */
+  }
+  40%{
+    transform: translateX(-30px)
+  }
+}
+/* @keyframes anitext {
+  0%,20%,100% {
+    transform: translateY( -20px);
+  }
+  40%{
+    transform: translateY(0px)
+  }
+} */
+@keyframes nan {
+  0%,20%,100% {
+    transform: translateX( 0px);
+
+   
+    /* opacity: 1.2; */
+  }
+  40%{
+    transform: translateX(-30px)
+  }
+}
+@keyframes Txt2 {
+  0%,20%,100% {
+    transform: translateX( 0px);
+    /* opacity: 1.2; */
+  }
+  40%{
+    transform: translateX(+30px)
+  }
+}
+  </style>
+</head>
+ 
+<body>
+ 
+  <div id="outerContainer">
+    <div id="container">
+      <div class="item">
+        <div class="circle" style="animation-delay: 0s"></div>
+        <div class="circle" style="animation-delay: 1s"></div>
+        <div class="circle" style="animation-delay: 2s"></div>
+        <div class="circle" style="animation-delay: 3s"></div>
+        <div class="anitext">
+            <div class="nan1">N</div>
+            <div class="nan">a</div>
+            <div class="nan2">N</div>
+        </div>
+    </div>
+    
+  </div>
+</body>
+ 
+</html>
